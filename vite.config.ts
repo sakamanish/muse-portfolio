@@ -6,25 +6,16 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Configure TanStack Start for SPA/static output on Netlify.
-// We enable SPA mode and instruct the prerender to emit `index.html` so
-// a static host can serve the shell. We also tweak Vite's rollup options
-// to keep the client bundle consolidated (single JS + single CSS file).
+// Configure TanStack Start for Vercel's SSR build output.
 export default defineConfig({
-  vite: {
-    // Keep Vite defaults for CSS splitting and chunking so Start's manifest
-    // generation works correctly. Avoid forcing a single bundle here.
-    build: {},
-  },
   tanstackStart: {
     spa: {
-      enabled: true,
-      prerender: {
-        // Emit shell at /index.html so Netlify can serve it directly.
-        outputPath: "index.html",
-      },
+      // Vercel serves the compiled SSR handler; avoid the SPA preview-prerender
+      // path, which expects a non-hashed server.js entry that this plugin version
+      // does not emit.
+      enabled: false,
     },
-    // Force server build entry to a named file so the preview server can import it as `server.js`.
+    // Keep the server entry explicit for the generated SSR bundle.
     server: { entry: "./src/server.ts" },
   },
 });
