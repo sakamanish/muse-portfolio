@@ -5,7 +5,7 @@ export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
       { title: "Reviews — MUSE" },
-      { name: "description", content: "What the MUSE circle is saying about our soft, comfort-first pieces." },
+      { name: "description", content: "What women in Hyderabad are saying about MUSE occasion wear." },
       { property: "og:title", content: "Reviews — MUSE" },
       { property: "og:description", content: "Words from the MUSE circle." },
     ],
@@ -14,12 +14,12 @@ export const Route = createFileRoute("/reviews")({
 });
 
 const reviews = [
-  { q: "The softest thing I've ever owned. Wearing MUSE feels like a hug from morning light.", n: "Ananya R.", p: "Mumbai" },
-  { q: "Every piece feels intentional — the kind of clothing you reach for again and again.", n: "Sophia L.", p: "London" },
-  { q: "Ordering on WhatsApp felt so personal. It's like having a stylist friend.", n: "Isabel M.", p: "Lisbon" },
-  { q: "The cashmere whisper dress is unreal. The drape, the warmth — I live in it.", n: "Maya K.", p: "Delhi" },
-  { q: "I've never felt more myself in a garment. MUSE just gets it.", n: "Eloise V.", p: "Paris" },
-  { q: "Quiet, beautiful, perfect. Worth every single rupee.", n: "Riya S.", p: "Bangalore" },
+  { q: "The yellow kurta set was even more beautiful in person. The embroidery and fit were perfect for my family celebration.", n: "Ananya R.", p: "Hyderabad" },
+  { q: "The floral lehenga felt light, comfortable, and so special. I received compliments all evening.", n: "Sanjana P.", p: "Hyderabad" },
+  { q: "Ordering over WhatsApp was simple and personal. The MUSE team helped me choose the right size.", n: "Mounika V.", p: "Hyderabad" },
+  { q: "The navy printed dress has such a beautiful silhouette. It is now my favourite occasion look.", n: "Ishita R.", p: "Hyderabad" },
+  { q: "The print, colour, and finishing are gorgeous. It feels made for Hyderabad celebrations.", n: "Riya S.", p: "Hyderabad" },
+  { q: "Beautiful clothes and thoughtful service from start to finish. I will definitely order again.", n: "Keerthi N.", p: "Hyderabad" },
 ];
 
 function Reviews() {
@@ -28,7 +28,7 @@ function Reviews() {
       <section className="px-6 md:px-16 mb-20 md:mb-28">
         <p className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground mb-6">Reviews</p>
         <h1 className="font-serif text-5xl md:text-8xl max-w-4xl leading-[0.98]">
-          Loved by women who <em className="italic">dress for themselves</em>.
+          Loved by women in <em className="italic">Hyderabad</em>.
         </h1>
       </section>
 

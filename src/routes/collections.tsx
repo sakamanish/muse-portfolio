@@ -1,12 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import c1 from "@/assets/collection-1.jpg";
-import c2 from "@/assets/collection-2.jpg";
-import c3 from "@/assets/collection-3.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g1 from "@/assets/gallery-1.jpg";
 import { whatsappLink } from "@/lib/whatsapp";
+import { collectionLooks } from "@/lib/collection-data";
 
 export const Route = createFileRoute("/collections")({
   head: () => ({
@@ -15,7 +10,7 @@ export const Route = createFileRoute("/collections")({
       {
         name: "description",
         content:
-          "Browse the MUSE collection: knitwear, tailoring, loungewear and slip dresses in warm, comfort-first silhouettes.",
+          "Browse the MUSE collection of printed dresses, embroidered sets, and occasion-ready Indian silhouettes.",
       },
       { property: "og:title", content: "Collections — MUSE" },
       { property: "og:description", content: "Soft, cinematic everyday wear." },
@@ -24,14 +19,7 @@ export const Route = createFileRoute("/collections")({
   component: Collections,
 });
 
-const looks = [
-  { img: c1, name: "Cashmere Whisper", category: "Knitwear" },
-  { img: c2, name: "Cocoa Tailoring", category: "Outerwear" },
-  { img: c3, name: "Sand Coords", category: "Loungewear" },
-  { img: g2, name: "Hallway Slip", category: "Dresses" },
-  { img: g4, name: "Amber Blazer", category: "Tailoring" },
-  { img: g1, name: "Linen Whisper", category: "Essentials" },
-];
+const looks = collectionLooks;
 
 function Collections() {
   return (
@@ -54,8 +42,7 @@ function Collections() {
           Pieces made to <em className="italic">linger</em>.
         </motion.h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-cocoa leading-relaxed">
-          A quiet wardrobe of natural fibres and warm neutrals — designed to be
-          worn, washed, and loved for years.
+          A vivid wardrobe of printed dresses and embroidered occasion pieces — designed to be worn, remembered, and loved for years.
         </p>
       </section>
 
@@ -73,12 +60,12 @@ function Collections() {
               transition={{ duration: 0.9, delay: (i % 2) * 0.1 }}
               className={`group block ${i % 2 === 1 ? "md:mt-24" : ""}`}
             >
-              <div className="relative overflow-hidden aspect-[4/5] bg-sand">
+              <div className="relative overflow-hidden aspect-[2/3] bg-sand">
                 <img
                   src={l.img}
                   alt={l.name}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
+                  className="h-full w-full object-cover transition-opacity duration-700 group-hover:opacity-90"
                 />
                 <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/15 transition-colors duration-700" />
               </div>

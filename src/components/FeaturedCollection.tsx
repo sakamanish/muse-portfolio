@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
-import c1 from "@/assets/collection-1.jpg";
-import c2 from "@/assets/collection-2.jpg";
-import c3 from "@/assets/collection-3.jpg";
 import { whatsappLink } from "@/lib/whatsapp";
+import { collectionLooks } from "@/lib/collection-data";
 
-const items = [
-  { img: c1, name: "The Cashmere Whisper", tag: "Knitwear", price: "Made to order" },
-  { img: c2, name: "Cocoa Tailoring", tag: "Outerwear", price: "Made to order" },
-  { img: c3, name: "Sand Coords", tag: "Loungewear", price: "Made to order" },
-];
+const items = collectionLooks.slice(0, 3).map((look) => ({
+  ...look,
+  tag: look.category,
+  price: "Made to order",
+}));
 
 export function FeaturedCollection() {
   return (
@@ -23,7 +21,7 @@ export function FeaturedCollection() {
           </h2>
         </div>
         <p className="hidden md:block text-sm text-muted-foreground max-w-xs leading-relaxed">
-          Soft silhouettes, warm tones, designed for the moments in between.
+          Hand-finished Indian silhouettes, joyful prints, and occasion pieces made for the moments in between.
         </p>
       </div>
 
@@ -40,14 +38,14 @@ export function FeaturedCollection() {
             transition={{ duration: 0.9, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="group block"
           >
-            <div className="relative overflow-hidden bg-sand aspect-[4/5]">
+            <div className="relative overflow-hidden bg-sand aspect-[2/3]">
               <img
                 src={it.img}
                 alt={it.name}
                 width={1024}
                 height={1280}
                 loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                className="h-full w-full object-cover transition-opacity duration-700 group-hover:opacity-90"
               />
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors duration-700" />
               <div className="absolute inset-x-0 bottom-0 p-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">

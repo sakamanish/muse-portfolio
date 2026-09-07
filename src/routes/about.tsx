@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import about from "@/assets/about.jpg";
-import g1 from "@/assets/gallery-1.jpg";
+import { collectionLooks } from "@/lib/collection-data";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -10,7 +9,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "MUSE is a comfort-first fashion label crafting soft, cinematic everyday wear in small batches.",
+          "MUSE is an independent fashion label crafting printed dresses and embroidered occasion wear in small batches.",
       },
       { property: "og:title", content: "About MUSE" },
       { property: "og:description", content: "The founder's note on softness as luxury." },
@@ -44,10 +43,10 @@ function About() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2 }}
-          src={about}
-          alt="MUSE — a quiet moment"
+          src={collectionLooks[4].img}
+          alt="MUSE Rosewood Fit and Flare pink printed dress"
           loading="lazy"
-          className="w-full aspect-[4/5] object-cover"
+          className="w-full aspect-[2/3] object-cover bg-sand"
         />
         <div className="space-y-6 text-cocoa md:pt-20">
           <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
@@ -63,9 +62,9 @@ function About() {
             quiet pleasure of putting on something that knows you.
           </p>
           <p className="text-base md:text-lg leading-relaxed">
-            We work in small batches with natural, breathable fabrics —
-            cottons, linens, soft cashmeres — in a palette borrowed from late
-            afternoon light. Nothing is rushed. Every cut is considered.
+            We work in small batches with breathable fabrics, expressive prints,
+            and embroidery inspired by the colour and craft of India. Nothing
+            is rushed. Every cut is considered.
           </p>
           <p className="text-base md:text-lg leading-relaxed">
             And because the relationship matters as much as the clothes, we
@@ -81,7 +80,7 @@ function About() {
         <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {[
             { n: "01", t: "Small batches", d: "Made in limited runs to avoid waste and keep quality high." },
-            { n: "02", t: "Natural fibres", d: "Cotton, linen, silk, cashmere — fabrics that breathe and age beautifully." },
+            { n: "02", t: "Thoughtful detail", d: "Print, embroidery, and considered finishing that rewards a closer look." },
             { n: "03", t: "Personal service", d: "Every order is hand-styled with you on WhatsApp." },
           ].map((p, i) => (
             <motion.div
@@ -101,10 +100,10 @@ function About() {
       </section>
 
       <section className="relative h-[60svh] overflow-hidden">
-        <img src={g1} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={collectionLooks[2].img} alt="Indigo printed dress from the MUSE collection" loading="lazy" className="absolute inset-0 h-full w-full object-contain bg-cocoa" />
         <div className="absolute inset-0 bg-ink/40 flex items-center justify-center p-8">
           <h2 className="font-serif text-cream text-4xl md:text-6xl text-center max-w-3xl italic">
-            "Made for everyday moments."
+            "Made for the moments you remember."
           </h2>
         </div>
       </section>

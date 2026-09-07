@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 const reviews = [
   {
     quote:
-      "The softest thing I've ever owned. Wearing MUSE feels like a hug from morning light.",
+      "The yellow kurta set was even more beautiful in person. The embroidery and fit were perfect for my family celebration.",
     name: "Ananya R.",
-    place: "Mumbai",
+    place: "Hyderabad",
   },
   {
     quote:
-      "Every piece feels intentional — the kind of clothing you reach for again and again.",
-    name: "Sophia L.",
-    place: "London",
+      "The floral lehenga felt light, comfortable, and so special. I received compliments all evening.",
+    name: "Sanjana P.",
+    place: "Hyderabad",
   },
   {
     quote:
-      "Ordering on WhatsApp felt so personal. It's like having a stylist friend.",
-    name: "Isabel M.",
-    place: "Lisbon",
+      "Ordering over WhatsApp was simple and personal. The MUSE team helped me choose the right size.",
+    name: "Mounika V.",
+    place: "Hyderabad",
   },
 ];
 

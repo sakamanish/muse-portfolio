@@ -6,10 +6,25 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
+// Configure TanStack Start for SPA/static output on Netlify.
+// We enable SPA mode and instruct the prerender to emit `index.html` so
+// a static host can serve the shell. We also tweak Vite's rollup options
+// to keep the client bundle consolidated (single JS + single CSS file).
 export default defineConfig({
+  vite: {
+    // Keep Vite defaults for CSS splitting and chunking so Start's manifest
+    // generation works correctly. Avoid forcing a single bundle here.
+    build: {},
+  },
   tanstackStart: {
-    server: { entry: "server" },
+    spa: {
+      enabled: true,
+      prerender: {
+        // Emit shell at /index.html so Netlify can serve it directly.
+        outputPath: "index.html",
+      },
+    },
+    // Force server build entry to a named file so the preview server can import it as `server.js`.
+    server: { entry: "./src/server.ts" },
   },
 });

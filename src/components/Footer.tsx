@@ -29,12 +29,12 @@ export function Footer() {
             Connect
           </p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/themusewear.in/"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm hover:text-clay transition"
           >
-            <Instagram className="h-4 w-4" /> @muse.thelabel
+            <Instagram className="h-4 w-4" /> @themusewear.in
           </a>
           <a
             href={whatsappLink(DEFAULT_MESSAGE)}

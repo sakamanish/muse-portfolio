@@ -57,25 +57,25 @@ function Contact() {
         <motion.a
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}
-          href="https://instagram.com" target="_blank" rel="noreferrer"
+          href="https://www.instagram.com/themusewear.in/" target="_blank" rel="noreferrer"
           className="group bg-sand p-10 hover:bg-clay/30 transition-colors duration-500"
         >
           <Instagram className="h-7 w-7 mb-6" />
           <p className="text-[10px] uppercase tracking-[0.3em] mb-3 text-muted-foreground">Daily looks</p>
           <h3 className="font-serif text-3xl mb-3">Instagram</h3>
-          <p className="text-sm text-cocoa">@muse.thelabel — new drops, styling, behind the scenes.</p>
+          <p className="text-sm text-cocoa">@themusewear.in — new drops, styling, behind the scenes.</p>
         </motion.a>
 
         <motion.a
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-          href="mailto:hello@muse.studio"
+          href="mailto:sakamanish8@gmail.com"
           className="group bg-sand p-10 hover:bg-clay/30 transition-colors duration-500"
         >
           <Mail className="h-7 w-7 mb-6" />
           <p className="text-[10px] uppercase tracking-[0.3em] mb-3 text-muted-foreground">Slow mail</p>
           <h3 className="font-serif text-3xl mb-3">Email</h3>
-          <p className="text-sm text-cocoa">hello@muse.studio — for collaborations & press.</p>
+          <p className="text-sm text-cocoa">sakamanish8@gmail.com — for collaborations & press.</p>
         </motion.a>
       </section>
     </div>

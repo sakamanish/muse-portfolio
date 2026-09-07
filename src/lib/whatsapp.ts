@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "1234567890"; // TODO: replace with real number (international format, no +)
+export const WHATSAPP_NUMBER = "919381449191"; // International format without + (India +91)
 
 export function whatsappLink(message: string): string {
   const text = encodeURIComponent(message);

@@ -25,8 +25,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/60 py-4"
-          : "bg-transparent py-6"
+          ? "bg-cream/95 backdrop-blur-md border-b border-border/60 py-4"
+          : "bg-cream/90 backdrop-blur-md border-b border-border/50 py-4"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
@@ -47,7 +47,7 @@ export function Navbar() {
         </nav>
         <button
           aria-label="Open menu"
-          className="md:hidden text-ink"
+          className="md:hidden text-ink p-2 -mr-2"
           onClick={() => setOpen(true)}
         >
           <Menu className="h-6 w-6" />
